@@ -1,6 +1,0 @@
-package maquinadispensadora;
-
-public class Factura {
-
-	
-}
