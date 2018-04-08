@@ -1,0 +1,80 @@
+package maquinadispensadora;
+
+public class Librocontable {
+
+	private static final double iva=21;
+	private static final double descuentoestudiante=5;
+	private static final double descuentoadministrativo=10;
+	private String usuario;
+	private double costoproducto;
+	private String nombre;
+	private String nombreproducto;
+	private double total=0;
+	
+	int	totaldecontabilidad=0;
+	
+	double costo=0,costo1=0;
+	
+	public Librocontable() {
+		total=0;	
+		usuario="";
+		costoproducto=0;
+	}
+	
+	public Librocontable(String usuario,double costoproducto,String nombre,String nombrepro) {
+		this.usuario=usuario;
+		this.costoproducto=costoproducto;
+		this.nombre=nombre;
+	}
+	
+	
+
+	public void aplicarivaproductos(Producto listaproductos[],int contpro){
+			costo=listaproductos[contpro].getCostoproducto();
+			costo1=((costo*iva)/100);
+			listaproductos[contpro].setAplicariva(costo1);
+		
+	}
+	
+	public void aplicardescuento(double costoproducto,int tipousuario) {
+		if(tipousuario==1) {
+			total=((costoproducto*descuentoestudiante)/100);
+		}else if(tipousuario==2){
+			total=((costoproducto*descuentoadministrativo)/100);
+		}
+	}
+	
+	
+	public double Total() {
+		return total;
+	}
+	
+	public void cuantacontabilidad(int totalcont) {
+		this.totaldecontabilidad=totalcont;
+	}
+	
+	public int cuantacontabilidadhay() {
+		return totaldecontabilidad;
+	}
+	
+	
+	
+	
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public double getCostoproducto() {
+		return costoproducto;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getNombrepro() {
+		return nombreproducto;
+	}
+	
+}
