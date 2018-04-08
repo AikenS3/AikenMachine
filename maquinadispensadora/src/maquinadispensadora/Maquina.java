@@ -1,0 +1,11 @@
+package maquinadispensadora;
+
+public class Maquina {
+	
+	public static void main(String [] args) {
+		
+		Menu mostrarmenu=new Menu();
+		mostrarmenu.Menumaquina();
+	}
+
+}
